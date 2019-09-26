@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B7733DD-61D3-440E-A08F-15F470D4356A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PlannerUI</RootNamespace>
+    <AssemblyName>PlannerUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateExerciseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateExerciseForm.Designer.cs">
+      <DependentUpon>CreateExerciseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWorkoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateWorkoutForm.Designer.cs">
+      <DependentUpon>CreateWorkoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditor.cs" />
+    <Compile Include="IExerciseRequester.cs" />
+    <Compile Include="IPlannedTrainingRequester.cs" />
+    <Compile Include="ITrainingRequester.cs" />
+    <Compile Include="PlanWorkoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanWorkoutForm.Designer.cs">
+      <DependentUpon>PlanWorkoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutCircuitViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkoutCircuitViewerForm.Designer.cs">
+      <DependentUpon>WorkoutCircuitViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkoutDashboardForm.Designer.cs">
+      <DependentUpon>WorkoutDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkoutViewerForm.Designer.cs">
+      <DependentUpon>WorkoutViewerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateExerciseForm.resx">
+      <DependentUpon>CreateExerciseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWorkoutForm.resx">
+      <DependentUpon>CreateWorkoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanWorkoutForm.resx">
+      <DependentUpon>PlanWorkoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WorkoutCircuitViewerForm.resx">
+      <DependentUpon>WorkoutCircuitViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkoutDashboardForm.resx">
+      <DependentUpon>WorkoutDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkoutViewerForm.resx">
+      <DependentUpon>WorkoutViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlannerLibrary\PlannerLibrary.csproj">
+      <Project>{1a62fd4d-f0b2-43c3-8ea8-7dd2a9775cdb}</Project>
+      <Name>PlannerLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
